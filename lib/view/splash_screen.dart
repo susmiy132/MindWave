@@ -4,7 +4,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-// import 'package:mindwave/View/login_screen.dart';
+import 'package:mindwave/view/login_screen.dart';
+
 
 
 class SplashScreen extends StatefulWidget {
@@ -20,9 +21,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Delay for 3 seconds and then navigate to LoginScreen
     Timer(Duration(seconds: 3), () {
-      // Navigator.pushReplacement(
-      //   context, MaterialPageRoute(builder: (context) => LoginScreen())
-      // );
+      Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginScreen())
+      );
     });
   }
 
