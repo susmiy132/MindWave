@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:mindwave/View/register_screen.dart';
-// import 'package:mindwave/view/dashboard_screen.dart';
+import 'package:mindwave/View/register_screen.dart';
+import 'package:mindwave/view/dashboard_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -129,10 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => DashboardScreen()),
-                    //   );
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DashboardScreen()),
+                      );
                     if (myKey.currentState!.validate())
                     {
                       // Logic
@@ -161,12 +161,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Text("Don't have an account? "),
                   GestureDetector(
-                    // onTap: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => RegisterScreen()),
-                    //   );
-                    // },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterScreen()),
+                      );
+                    },
                     child: Text(
                       "Register",
                       style: TextStyle(
