@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwave/View/register_screen.dart';
-import 'package:mindwave/view/dashboard_screen.dart';
+// import 'package:mindwave/View/register_screen.dart';
+// import 'package:mindwave/view/dashboard_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -27,10 +27,14 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text(
+          "Login Page",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.purple.shade900,
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
@@ -39,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(8),
@@ -51,8 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Image.asset(
                       'assets/MindWavelogo.png',
-                      width: 100,
+                      width: 230,
                       height: 100,
+                      fit: BoxFit.contain,
 
                     ),
                   ],
@@ -69,8 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderSide: BorderSide(color: Colors.grey.shade600)
                   )
                 ),
-                keyboardType: TextInputType.numberWithOptions(
-                ),
+                // keyboardType: TextInputType.numberWithOptions(),
                 controller: emailcontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty){
@@ -83,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 decoration: InputDecoration(
                   labelText: "Password",
+                  hintStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
                   border: UnderlineInputBorder(),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.purple.shade900)
@@ -91,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderSide: BorderSide(color: Colors.grey.shade600)
                   ),
                 ),
-                keyboardType: TextInputType.numberWithOptions(),
+                // keyboardType: TextInputType.numberWithOptions(),
                 controller: passwordcontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty) {
@@ -124,10 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DashboardScreen()),
-                      );
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => DashboardScreen()),
+                    //   );
                     if (myKey.currentState!.validate())
                     {
                       // Logic
@@ -139,7 +144,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     }
                   }, 
-                  child: Text("Login")
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  )
                   ),
               ),
               
@@ -149,12 +161,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Text("Don't have an account? "),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RegisterScreen()),
-                      );
-                    },
+                    // onTap: () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => RegisterScreen()),
+                    //   );
+                    // },
                     child: Text(
                       "Register",
                       style: TextStyle(
