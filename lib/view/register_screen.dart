@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:mindwave/View/login_screen.dart';
+import 'package:mindwave/View/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
-
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -158,10 +157,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => LoginScreen()),
-                    //   );
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
                     if (myKey.currentState!.validate())
                     {
                       // Logic
