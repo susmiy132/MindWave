@@ -42,24 +42,24 @@ class DashboardScreen extends StatelessWidget {
           ),
           Spacer(),
 
-          // Expanded(child: Container()),
-          // Container(
-          //   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-          //   decoration: BoxDecoration(
-          //     border: Border.all(color: Colors.black),
-          //     borderRadius: BorderRadius.circular(8),
-          //     color: Colors.purple.shade900,
-          //   ),
-          //   margin: EdgeInsets.all(2),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       _buildIconColumn(Icons.cabin_outlined, "Home", Colors.white),
-          //       _buildIconColumn(Icons.notification_add, "notice", Colors.white),
-          //       _buildIconColumn(Icons.account_circle_sharp, "profile", Colors.white),
-          //     ],
-          //   ),
-          // )
+          Expanded(child: Container()),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.purple.shade900,
+            ),
+            margin: EdgeInsets.all(2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildIconColumn(Icons.cabin_outlined, "Home", Colors.white),
+                _buildIconColumn(Icons.notification_add, "notice", Colors.white),
+                _buildIconColumn(Icons.account_circle_sharp, "profile", Colors.white),
+              ],
+            ),
+          )
         ],
       ),
     );
@@ -95,21 +95,21 @@ class DashboardScreen extends StatelessWidget {
   }
 
 
-  // Widget _buildIconColumn(IconData icon, String label, Color color){
-  //   return Column(
-  //     mainAxisSize: MainAxisSize.min,
-  //     children: [
-  //       Icon(icon, color: color,),
-  //       SizedBox(height: 8),
-  //       Text(
-  //         label,
-  //         style: TextStyle(
-  //           fontSize: 14,
-  //           fontWeight: FontWeight.bold,
-  //           color: color
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
+  Widget _buildIconColumn(IconData icon, String label, Color color){
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, color: color,),
+        SizedBox(height: 8),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: color
+          ),
+        ),
+      ],
+    );
+  }
 }
