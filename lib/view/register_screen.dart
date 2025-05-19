@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mindwave/View/login_screen.dart';
+// import 'package:mindwave/View/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
+
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -17,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
   final phonenumbercontroller = TextEditingController();
+  final confirmpasswordcontroller = TextEditingController();
 
   // step 1 key 
   final myKey = GlobalKey<FormState>();
@@ -25,32 +27,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+       appBar: AppBar(
+        title: Text(
+          "Sign Up",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.purple.shade900
+       ),
       body: Padding(
-        padding: EdgeInsets.all(0),
+        padding: EdgeInsets.all(18),
         child: Form(
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 180, horizontal: 40),
+                padding: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white
                 ),
-                margin: EdgeInsets.all(16),
+                margin: EdgeInsets.all(26),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Image.asset(
                       'assets/MindWavelogo.png',
                       height: 100,
-                      width: 100,
+                      width: 150,
                     ),
                   ],
                 ),
               ),
 
-              Text("Register"),
 
               TextFormField(
                 decoration: InputDecoration(
@@ -63,8 +73,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     borderSide: BorderSide(color: Colors.grey.shade600)
                   )
                 ),
-                keyboardType: TextInputType.numberWithOptions(
-                ),
+                // keyboardType: TextInputType.numberWithOptions(
+                // ),
                 controller: emailcontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty){
@@ -85,12 +95,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     borderSide: BorderSide(color: Colors.grey)
                   )
                 ),
-                keyboardType: TextInputType.numberWithOptions(
-                ),
-                controller: emailcontroller,
+                // keyboardType: TextInputType.numberWithOptions(),
+                controller: phonenumbercontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty){
-                    return 'please enter an email';
+                    return 'please enter your number';
                   }
                   return null;
                 },
@@ -108,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     borderSide: BorderSide(color: Colors.grey.shade600)
                   ),
                 ),
-                keyboardType: TextInputType.numberWithOptions(),
+                // keyboardType: TextInputType.numberWithOptions(),
                 controller: passwordcontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty) {
@@ -128,14 +137,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     borderSide: BorderSide(color: Colors.grey.shade600)
                   ),
                 ),
-                keyboardType: TextInputType.numberWithOptions(),
-                controller: passwordcontroller,
+                // keyboardType: TextInputType.numberWithOptions(),
+                controller: confirmpasswordcontroller,
                 validator: (value) {
                   if(value == null || value.isEmpty) {
                     return 'please enter a password';
                   }
                   return null;
                 },
+              ),
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple.shade900,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+    
+                    ),
+                  ),
+                  onPressed: () {
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => LoginScreen()),
+                    //   );
+                    if (myKey.currentState!.validate())
+                    {
+                      // Logic
+                      int email = int.parse(emailcontroller.text);
+                      int password = int.parse(passwordcontroller.text);
+                      setState(() {
+                        result = email + password;
+                      }
+                      );
+                    }
+                  }, 
+                  child: Text(
+                    "Register",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  )
+                  ),
               ),
 
               SizedBox(height: 16),
