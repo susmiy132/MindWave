@@ -20,12 +20,12 @@ class DashboardScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
-            // child: Image.asset(
-            //   'assets/Charts.png', 
-            //   width: 550,
-            //   height: 340,
-            //   fit: BoxFit.contain,
-            // ),
+            child: Image.asset(
+              'assets/Charts.png', 
+              width: 550,
+              height: 340,
+              fit: BoxFit.contain,
+            ),
           ),
 
           // Padding(
