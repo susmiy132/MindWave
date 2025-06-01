@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindwave/View/register_screen.dart';
-import 'package:mindwave/view/dashboard_screen.dart';
+import 'package:mindwave/bottom_navigation/dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -130,9 +130,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DashboardScreen()),
-                      );
+                      context,
+                      MaterialPageRoute(builder: (context) => DashboardBottomScreen()),
+                    );
                     if (myKey.currentState!.validate())
                     {
                       // Logic
