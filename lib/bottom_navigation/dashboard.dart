@@ -15,12 +15,12 @@ class _DashboardBottomScreenState extends State<DashboardBottomScreen> {
 
   int _selectedIndex = 0;
 
-  List<Widget> lstBottomScreen = [
-    const HomeScreen(),
-    const NoticeScreen(),
-    const AboutScreen(),
-    const ProfileScreen(),
-  ];
+  // List<Widget> lstBottomScreen = [
+  //   const HomeScreen(),
+  //   const NoticeScreen(),
+  //   const AboutScreen(),
+  //   const ProfileScreen(),
+  // ];
 
   @override
   Widget build(BuildContext context) {
