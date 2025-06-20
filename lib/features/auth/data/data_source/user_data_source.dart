@@ -1,17 +1,17 @@
-// import 'dart:io';
+import 'dart:io';
 
-// import 'package:mindwave/features/auth/domain/entity/user_entity.dart';
+import 'package:mindwave/features/auth/domain/entity/user_entity.dart';
 
-// abstract interface class IUserDataSource{
-//   Future<void> registerUser(UserEntity user);
+abstract interface class IUserDataSource{
+  Future<void> registerUser(UserEntity user);
 
-//   Future<String> loginUser(
-//     String email,
-//     String password,
-//   );
+  Future<String> loginUser(
+    String email,
+    String password,
+  );
 
-//   Future<String> uploadProfilePicture(File file);
+  Future<String> uploadProfilePicture(File file);
 
-//   Future<UserEntity> getCurrentUser();
+  Future<UserEntity> getCurrentUser();
 
-// }
+}
