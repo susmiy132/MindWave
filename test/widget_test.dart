@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mindwave/app.dart';
+import 'package:mindwave/app/app.dart';
 
 
 void main() {
