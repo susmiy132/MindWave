@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -60,6 +61,27 @@ class _RegisterViewState extends State<RegisterView> {
         title: Text("Register"),
         centerTitle: true,
       ),
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mindwave/features/auth/presentation/view/login_view.dart';
+import 'package:mindwave/features/auth/presentation/view_model/register_view_model/register_event.dart';
+import 'package:mindwave/features/auth/presentation/view_model/register_view_model/register_view_model.dart';
+
+class RegisterView extends StatelessWidget {
+  RegisterView({super.key});
+  
+  final _gap = const SizedBox(height: 8,);
+  final _key = GlobalKey<FormState>();
+  final fullnameController = TextEditingController(text: 'susmita rana');
+  final emailController = TextEditingController(text: 'susmitarana12@gmail.com');
+  final phoneController = TextEditingController(text: '9804677534');
+  final passwordController = TextEditingController(text: 'susmita123');
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+>>>>>>> sprint3
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -85,6 +107,7 @@ class _RegisterViewState extends State<RegisterView> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               ElevatedButton.icon(
+<<<<<<< HEAD
                                 onPressed: () {
                                   _checkPermissions().then((_) {
                                     _browseImage(ImageSource.camera);
@@ -101,6 +124,9 @@ class _RegisterViewState extends State<RegisterView> {
                                   });
                                   Navigator.pop(context);
                                 }, 
+=======
+                                onPressed: () {}, 
+>>>>>>> sprint3
                                 icon: const Icon(Icons.image),
                                 label: const Text('Gallery'),
                               )
@@ -114,6 +140,7 @@ class _RegisterViewState extends State<RegisterView> {
                       width: 200,
                       child: CircleAvatar(
                         radius: 50,
+<<<<<<< HEAD
                         backgroundImage: _img != null
                             ? FileImage(_img!)
                             : const AssetImage('assets/images/profile.jpg')
@@ -122,6 +149,16 @@ class _RegisterViewState extends State<RegisterView> {
                         // backgroundImage: 
                         //   const AssetImage('assets/images/profile.jpg')
                         //   as ImageProvider,
+=======
+                        // backgroundImage: _img != null
+                        //     ? FileImage(_img!)
+                        //     : const AssetImage('assets/images/profile.png')
+                        //         as ImageProvider,
+
+                        backgroundImage: 
+                          const AssetImage('assets/image/profile.png')
+                          as ImageProvider,
+>>>>>>> sprint3
                       ),
                     ),
                   ),
@@ -169,8 +206,12 @@ class _RegisterViewState extends State<RegisterView> {
                       return null;
                     }),
                   ),
+<<<<<<< HEAD
                   _gap, 
                   
+=======
+                  _gap,
+>>>>>>> sprint3
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -190,7 +231,10 @@ class _RegisterViewState extends State<RegisterView> {
                       child: const Text('Register'),
                     ),
                   ),
+<<<<<<< HEAD
                  
+=======
+>>>>>>> sprint3
                   SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

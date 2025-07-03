@@ -30,8 +30,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:mindwave/core/common/my_snackbar.dart/my_snackbar.dart';
 // import 'package:mindwave/app/service_locator/service_locator.dart';
+=======
+// import 'package:mindwave/app/service_locator/service_locator.dart';
+import 'package:mindwave/core/common/snackbar/my_snackbar.dart';
+>>>>>>> sprint3
 import 'package:mindwave/features/auth/domain/use_case/login_usecase.dart';
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_event.dart';
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_state.dart';

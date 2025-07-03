@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 
 import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+=======
+import 'package:equatable/equatable.dart';
+import 'package:hive_flutter/adapters.dart';
+>>>>>>> sprint3
 import 'package:mindwave/app/constant/hive/hive_table_constraint.dart';
 import 'package:mindwave/features/auth/domain/entity/user_entity.dart';
 
