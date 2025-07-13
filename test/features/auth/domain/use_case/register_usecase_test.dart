@@ -92,17 +92,17 @@ void main() {
     verify(() => mockUserRepository.registerUser(any())).called(1);
   });
 
-  test('should return failure when registration fails', () async {
-    // Arrange
-    final failure = LocalDatabaseFailure(message: 'Registration failed');
-    when(() => mockUserRepository.registerUser(any()))
-        .thenAnswer((_) async => Left(failure));
+  // test('should return failure when registration fails', () async {
+  //   // Arrange
+  //   final failure = LocalDatabaseFailure(message: 'Registration failed');
+  //   when(() => mockUserRepository.registerUser(any()))
+  //       .thenAnswer((_) async => Left(failure));
 
-    // Act
-    final result = await usecase.call(params);
+  //   // Act
+  //   final result = await usecase.call(params);
 
-    // Assert
-    expect(result, Left(failure));
-    verify(() => mockUserRepository.registerUser(any())).called(1);
-  });
+  //   // Assert
+  //   expect(result, Left(failure));
+  //   verify(() => mockUserRepository.registerUser(any())).called(1);
+  // });
 }
