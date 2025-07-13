@@ -171,34 +171,34 @@ void main() {
     verify(() => mockTokenSharedPrefs.saveToken(token)).called(1);
   });
 
-//   test('should return failure when login fails', () async {
-//     // Arrange
-//     final failure = LocalDatabaseFailure(message: 'Login failed');
-//     when(() => mockUserRepository.loginUser(any(), any()))
-//         .thenAnswer((_) async => Left(failure));
+  test('should return failure when login fails', () async {
+    // Arrange
+    final failure = LocalDatabaseFailure(message: 'Login failed');
+    when(() => mockUserRepository.loginUser(any(), any()))
+        .thenAnswer((_) async => Left(failure));
 
-//     // Act
-//     final result = await usecase.call(loginParams);
+    // Act
+    final result = await usecase.call(loginParams);
 
-//     // Assert
-//     expect(result, Left(failure));
-//     verify(() => mockUserRepository.loginUser(loginParams.email, loginParams.password)).called(1);
-//     verifyNever(() => mockTokenSharedPrefs.saveToken(any()));
-//   });
+    // Assert
+    expect(result, Left(failure));
+    verify(() => mockUserRepository.loginUser(loginParams.email, loginParams.password)).called(1);
+    verifyNever(() => mockTokenSharedPrefs.saveToken(any()));
+  });
 
-//   test('should return token but print failure when saving token fails', () async {
-//     // Arrange
-//     when(() => mockUserRepository.loginUser(any(), any()))
-//         .thenAnswer((_) async => const Right(token));
-//     when(() => mockTokenSharedPrefs.saveToken(any()))
-//         .thenAnswer((_) async => Left(LocalDatabaseFailure(message: 'Save failed')));
+  test('should return token but print failure when saving token fails', () async {
+    // Arrange
+    when(() => mockUserRepository.loginUser(any(), any()))
+        .thenAnswer((_) async => const Right(token));
+    when(() => mockTokenSharedPrefs.saveToken(any()))
+        .thenAnswer((_) async => Left(LocalDatabaseFailure(message: 'Save failed')));
 
-//     // Act
-//     final result = await usecase.call(loginParams);
+    // Act
+    final result = await usecase.call(loginParams);
 
-//     // Assert
-//     expect(result, const Right(token));
-//     verify(() => mockUserRepository.loginUser(loginParams.email, loginParams.password)).called(1);
-//     verify(() => mockTokenSharedPrefs.saveToken(token)).called(1);
-//   });
+    // Assert
+    expect(result, const Right(token));
+    verify(() => mockUserRepository.loginUser(loginParams.email, loginParams.password)).called(1);
+    verify(() => mockTokenSharedPrefs.saveToken(token)).called(1);
+  });
 }
