@@ -24,15 +24,15 @@ void main() {
       child: MaterialApp(home: LoginViewScreen()),
     );
   }
-  // testWidgets('login view model ...', (tester) async {
+  testWidgets('login view model ...', (tester) async {
 
-  //   when(() => loginViewModel.state).thenReturn(LoginState.initial());
+    when(() => loginViewModel.state).thenReturn(LoginState.initial());
 
-  //   await tester.pumpWidget(loadLoginViewModel());
-  //   await tester.pumpAndSettle();
+    await tester.pumpWidget(loadLoginViewModel());
+    await tester.pumpAndSettle();
 
-  //   // final button by text
-  //   final result = find.widgetWithText(ElevatedButton, 'Login');
-  //   expect(result, findsOneWidget);
-  // });
+    // final button by text
+    final result = find.widgetWithText(ElevatedButton, 'Login');
+    expect(result, findsOneWidget);
+  });
 }
