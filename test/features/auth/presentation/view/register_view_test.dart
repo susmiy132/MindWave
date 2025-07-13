@@ -29,15 +29,15 @@ void main() {
       child: MaterialApp(home: RegisterView()),
     );
   }
-  // testWidgets('register view model ...', (tester) async {
+  testWidgets('register view model ...', (tester) async {
 
-  //   when(() => registerViewModel.state).thenReturn(RegisterState.initial());
+    when(() => registerViewModel.state).thenReturn(RegisterState.initial());
 
-  //   await tester.pumpWidget(loadRegisterViewModel());
-  //   await tester.pumpAndSettle();
+    await tester.pumpWidget(loadRegisterViewModel());
+    await tester.pumpAndSettle();
 
-  //   // final button by text
-  //   final result = find.widgetWithText(ElevatedButton, 'Register');
-  //   expect(result, findsOneWidget);
-  // });
+    // final button by text
+    final result = find.widgetWithText(ElevatedButton, 'Register');
+    expect(result, findsOneWidget);
+  });
 }
