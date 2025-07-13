@@ -10,7 +10,7 @@ import 'package:mindwave/features/auth/domain/entity/user_entity.dart';
 >>>>>>> sprint3
 
 abstract interface class IUserRepository {
-  Future<Either<Failure, void>> registerUser(UserEntity user);
+  Future<Either<Failure, void>> registerUser(UserEntity userEntity);
 
   Future<Either<Failure, String>> loginUser(
 <<<<<<< HEAD
