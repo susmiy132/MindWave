@@ -34,26 +34,26 @@ void main() {
     loginViewModel.close();
   });
 
-  // blocTest<LoginViewModel, LoginState>(
-  //   'emits [loading, success] when login succeeds',
-  //   build: () {
-  //     when(() => mockUserLoginUsecase(any()))
-  //         .thenAnswer((_) async => const Right(testToken));
-  //     return loginViewModel;
-  //   },
-  //   act: (bloc) => bloc.add(LoginWithEmailAndPasswordEvent(
-  //     email: testEmail,
-  //     password: testPassword,
-  //     context: testContext,
-  //   )),
-  //   expect: () => [
-  //     LoginState.initial().copyWith(isLoading: true),
-  //     LoginState.initial().copyWith(isLoading: false, isSuccess: true),
-  //   ],
-  //   verify: (_) {
-  //     verify(() => mockUserLoginUsecase(any())).called(1);
-  //   },
-  // );
+  blocTest<LoginViewModel, LoginState>(
+    'emits [loading, success] when login succeeds',
+    build: () {
+      when(() => mockUserLoginUsecase(any()))
+          .thenAnswer((_) async => const Right(testToken));
+      return loginViewModel;
+    },
+    act: (bloc) => bloc.add(LoginWithEmailAndPasswordEvent(
+      email: testEmail,
+      password: testPassword,
+      context: testContext,
+    )),
+    expect: () => [
+      LoginState.initial().copyWith(isLoading: true),
+      LoginState.initial().copyWith(isLoading: false, isSuccess: true),
+    ],
+    verify: (_) {
+      verify(() => mockUserLoginUsecase(any())).called(1);
+    },
+  );
 
   blocTest<LoginViewModel, LoginState>(
     'emits [loading, failure] when login fails',
