@@ -71,6 +71,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mindwave/core/common/my_snackbar.dart/my_snackbar.dart';
+import 'package:mindwave/core/error/failure.dart';
 import 'package:mindwave/features/auth/domain/use_case/register_usecase.dart';
 import 'package:mindwave/features/auth/domain/use_case/upload_profile_image_usecase.dart';
 import 'package:mindwave/features/auth/presentation/view_model/register_view_model/register_event.dart';
@@ -79,10 +80,12 @@ import 'package:mindwave/features/auth/presentation/view_model/register_view_mod
 class RegisterViewModel extends Bloc<RegisterEvent, RegisterState> {
   final UserRegisterUsecase _registerUsecase;
   final UploadImageUsecase _uploadImageUsecase;
+  // final SnackBar showSnackBar;
 
   RegisterViewModel(
     this._registerUsecase,
     this._uploadImageUsecase,
+    // this.showSnackBar,
   ) : super(RegisterState.initial()) {
     on<RegisterUserEvent>(_onRegisterUser);
     on<UploadImageEvent>(_onLoadImage);
@@ -101,6 +104,7 @@ class RegisterViewModel extends Bloc<RegisterEvent, RegisterState> {
         phone: event.phone,
         profileImage: state.imageName,
         password: event.password,
+        
       ),
     );
 
@@ -125,11 +129,28 @@ class RegisterViewModel extends Bloc<RegisterEvent, RegisterState> {
         Future.delayed(const Duration(seconds: 1), () {
           Navigator.pushReplacementNamed(event.context, "/login");
         });
+
+        // Future<void> _onLoadImage(
+        //   UploadImageEvent event,
+        //   Emitter <RegisterState> emit,
+        // ) async {
+        //   emit(state.copyWith(isLoading: true));
+        //   final result = await _uploadImageUsecase(UploadImageParams(file: event.file));
+
+        //   result.fold(
+        //     (failure) => emit(state.copyWith(isLoading: false, isSuccess: false)),
+        //     (imageUrl) => emit(state.copyWith(
+        //       isLoading: false,
+        //       isSuccess: true,
+        //       imageName: imageUrl,
+        //     )),
+        //   );
+        // }
       },
     );
   }
 
-  void _onLoadImage(UploadImageEvent event, Emitter<RegisterState> emit) async {
+  Future <void> _onLoadImage(UploadImageEvent event, Emitter<RegisterState> emit) async {
     emit(state.copyWith(isLoading: true));
     final result = await _uploadImageUsecase.call(
       UploadImageParams(file: event.file),
