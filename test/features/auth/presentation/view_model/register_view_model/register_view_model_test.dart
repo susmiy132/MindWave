@@ -455,21 +455,21 @@ void main() {
     },
   );
 
-//   blocTest<RegisterViewModel, RegisterState>(
-//     'emits [loading, failure] when image upload fails',
-//     build: () {
-//       when(() => mockUploadImageUsecase(any())).thenAnswer(
-//         (_) async => Left(LocalDatabaseFailure(message: "Upload failed")),
-//       );
-//       return registerViewModel;
-//     },
-//     act: (bloc) => bloc.add(UploadImageEvent(file: MockFile())),
-//     expect: () => [
-//       RegisterState.initial().copyWith(isLoading: true),
-//       RegisterState.initial().copyWith(isLoading: false, isSuccess: false),
-//     ],
-//     verify: (_) {
-//       verify(() => mockUploadImageUsecase(any())).called(1);
-//     },
-//   );
+  blocTest<RegisterViewModel, RegisterState>(
+    'emits [loading, failure] when image upload fails',
+    build: () {
+      when(() => mockUploadImageUsecase(any())).thenAnswer(
+        (_) async => Left(LocalDatabaseFailure(message: "Upload failed")),
+      );
+      return registerViewModel;
+    },
+    act: (bloc) => bloc.add(UploadImageEvent(file: MockFile())),
+    expect: () => [
+      RegisterState.initial().copyWith(isLoading: true),
+      RegisterState.initial().copyWith(isLoading: false, isSuccess: false),
+    ],
+    verify: (_) {
+      verify(() => mockUploadImageUsecase(any())).called(1);
+    },
+  );
 }
