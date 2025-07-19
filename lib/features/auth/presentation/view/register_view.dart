@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -61,7 +61,6 @@ class _RegisterViewState extends State<RegisterView> {
         title: Text("Register"),
         centerTitle: true,
       ),
-=======
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mindwave/features/auth/presentation/view/login_view.dart';
@@ -81,7 +80,6 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
->>>>>>> sprint3
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -107,7 +105,7 @@ class RegisterView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               ElevatedButton.icon(
-<<<<<<< HEAD
+
                                 onPressed: () {
                                   _checkPermissions().then((_) {
                                     _browseImage(ImageSource.camera);
@@ -124,9 +122,9 @@ class RegisterView extends StatelessWidget {
                                   });
                                   Navigator.pop(context);
                                 }, 
-=======
+
                                 onPressed: () {}, 
->>>>>>> sprint3
+
                                 icon: const Icon(Icons.image),
                                 label: const Text('Gallery'),
                               )
@@ -139,8 +137,7 @@ class RegisterView extends StatelessWidget {
                       height: 200,
                       width: 200,
                       child: CircleAvatar(
-                        radius: 50,
-<<<<<<< HEAD
+                        radius: 5
                         backgroundImage: _img != null
                             ? FileImage(_img!)
                             : const AssetImage('assets/images/profile.jpg')
@@ -149,7 +146,7 @@ class RegisterView extends StatelessWidget {
                         // backgroundImage: 
                         //   const AssetImage('assets/images/profile.jpg')
                         //   as ImageProvider,
-=======
+
                         // backgroundImage: _img != null
                         //     ? FileImage(_img!)
                         //     : const AssetImage('assets/images/profile.png')
@@ -158,7 +155,7 @@ class RegisterView extends StatelessWidget {
                         backgroundImage: 
                           const AssetImage('assets/image/profile.png')
                           as ImageProvider,
->>>>>>> sprint3
+
                       ),
                     ),
                   ),

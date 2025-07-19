@@ -15,21 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
-<<<<<<< HEAD
             child:
               Image.asset('assets/images/graph.png', 
-=======
-            child: Image.asset(
-              'assets/Charts.png', 
->>>>>>> sprint3
               width: 550,
               height: 340,
               fit: BoxFit.contain,
             ),
-<<<<<<< HEAD
             
-=======
->>>>>>> sprint3
           ),
 
           Padding(

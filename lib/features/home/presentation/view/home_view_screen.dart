@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mindwave/bottom_navigation/about.dart';
-import 'package:mindwave/bottom_navigation/home.dart';
-import 'package:mindwave/bottom_navigation/notice.dart';
-import 'package:mindwave/bottom_navigation/profile.dart';
+import 'package:mindwave/features/home/presentation/view/bottom_navigation/about.dart';
+import 'package:mindwave/features/home/presentation/view/bottom_navigation/home.dart';
+import 'package:mindwave/features/home/presentation/view/bottom_navigation/notice.dart';
+import 'package:mindwave/features/home/presentation/view/bottom_navigation/profile.dart';
 
 class HomeViewScreen extends StatefulWidget {
   const HomeViewScreen({super.key});

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-<<<<<<< HEAD
+
 import 'package:mindwave/features/auth/presentation/view/register_view.dart';
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_event.dart';
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_view_model.dart';
 import 'package:mindwave/features/home/presentation/view/home_view_screen.dart';
-=======
+
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_event.dart';
 import 'package:mindwave/features/auth/presentation/view_model/login_view_model/login_view_model.dart';
 import 'package:mindwave/features/home/presentation/view/home_view.dart';
->>>>>>> sprint3
+
 
 class LoginViewScreen extends StatelessWidget {
   LoginViewScreen({super.key});
@@ -23,13 +23,10 @@ class LoginViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
       appBar: AppBar(
         title: Text("Login"),
         centerTitle: true,
       ),
-=======
->>>>>>> sprint3
       body: SafeArea(
         child: Form(
           key: _formKey,
@@ -39,7 +36,6 @@ class LoginViewScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 child: Column(
                   children: [
-<<<<<<< HEAD
                     SizedBox(
                       height: 200,
                       width: 200,
@@ -60,11 +56,11 @@ class LoginViewScreen extends StatelessWidget {
                     const Text(
                       'Profile Picture',
                       style: TextStyle(fontSize: 20, fontFamily: 'Montserrat Bold'),
-=======
+
                     const Text(
                       'Login',
                       style: TextStyle(fontSize: 30, fontFamily: 'Montserrat Bold'),
->>>>>>> sprint3
+
                     ),
                     _gap,
                     TextFormField(
@@ -124,7 +120,7 @@ class LoginViewScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-<<<<<<< HEAD
+
                     Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -147,8 +143,6 @@ class LoginViewScreen extends StatelessWidget {
                   ),
                 ]
               ),
-=======
->>>>>>> sprint3
                   ],
                 ),
               ),
