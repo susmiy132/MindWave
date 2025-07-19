@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Widget Testing
 
 import 'package:bloc_test/bloc_test.dart';
@@ -42,7 +42,7 @@ void main() {
     expect(result, findsOneWidget);
   });
 }
-=======
+
 // // Widget Testing
 
 // import 'package:bloc_test/bloc_test.dart';
@@ -86,4 +86,3 @@ void main() {
 //     expect(result, findsOneWidget);
 //   });
 // }
->>>>>>> sprint4
