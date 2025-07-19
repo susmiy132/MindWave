@@ -240,7 +240,7 @@ Future _initAuthModule() async {
   );
 }
 
-/// ✅ Splash Module Setup
+// /// ✅ Splash Module Setup
 Future<void> _initSplashModule() async {
   serviceLocator.registerFactory(() => SplashViewModel());
 }
