@@ -1,11 +1,11 @@
-// import 'package:mindwave/features/progress/domain/entity/progress_entity.dart';
+import 'package:mindwave/features/progress/domain/entity/progress_entity.dart';
 
-// abstract class ProgressEvent {}
+abstract class ProgressEvent {}
 
-// class LoadProgressEvent extends ProgressEvent {}
+class LoadProgressEvent extends ProgressEvent {}
 
-// class AddProgressEvent extends ProgressEvent {
-//   final ProgressEntity progress;
+class AddProgressEvent extends ProgressEvent {
+  final ProgressEntity progress;
 
-//   AddProgressEvent(this.progress);
-// }
+  AddProgressEvent(this.progress);
+}
