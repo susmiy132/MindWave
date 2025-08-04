@@ -1,14 +1,14 @@
-// import 'package:mindwave/features/progress/domain/entity/progress_entity.dart';
+import 'package:mindwave/features/progress/domain/entity/progress_entity.dart';
 
 
-// abstract class ProgressState {}
+abstract class ProgressState {}
 
-// class ProgressInitialState extends ProgressState {}
+class ProgressInitialState extends ProgressState {}
 
-// class ProgressLoadedState extends ProgressState {
-//   final List<ProgressEntity> progressList;
+class ProgressLoadedState extends ProgressState {
+  final List<ProgressEntity> progressList;
 
-//   ProgressLoadedState(this.progressList);
-// }
+  ProgressLoadedState(this.progressList);
+}
 
-// class ProgressEmptyState extends ProgressState {}
+class ProgressEmptyState extends ProgressState {}
