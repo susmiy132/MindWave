@@ -1,20 +1,50 @@
+// import 'package:equatable/equatable.dart';
+
+// class LoginState extends Equatable{
+//   final bool isLoading;
+//   final bool isSuccess;
+
+//   const LoginState({required this.isLoading, required this.isSuccess});
+
+//   const LoginState.initial()  : isLoading =false, isSuccess = false;
+
+//   LoginState copyWith({bool? isLoading, bool? isSuccess}) {
+//     return LoginState(
+//       isLoading: isLoading ?? this.isLoading, 
+//       isSuccess: isSuccess ?? this.isSuccess,
+//     );
+//   }
+  
+//   @override
+//   List<Object?> get props => [isLoading, isSuccess];
+// }
+
+
 import 'package:equatable/equatable.dart';
 
-class LoginState extends Equatable{
+class LoginState extends Equatable {
   final bool isLoading;
   final bool isSuccess;
 
-  const LoginState({required this.isLoading, required this.isSuccess});
+  const LoginState({
+    required this.isLoading,
+    required this.isSuccess,
+  });
 
-  const LoginState.initial()  : isLoading =false, isSuccess = false;
+  factory LoginState.initial() {
+    return const LoginState(isLoading: false, isSuccess: false);
+  }
 
-  LoginState copyWith({bool? isLoading, bool? isSuccess}) {
+  LoginState copyWith({
+    bool? isLoading,
+    bool? isSuccess,
+  }) {
     return LoginState(
-      isLoading: isLoading ?? this.isLoading, 
+      isLoading: isLoading ?? this.isLoading,
       isSuccess: isSuccess ?? this.isSuccess,
     );
   }
-  
+
   @override
   List<Object?> get props => [isLoading, isSuccess];
 }

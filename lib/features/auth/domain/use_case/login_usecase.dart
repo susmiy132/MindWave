@@ -1,10 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:mindwave/app/shared_pref/token_shared_prefs.dart';
-=======
->>>>>>> sprint3
 import 'package:mindwave/app/use_case/use_case.dart';
 import 'package:mindwave/core/error/failure.dart';
 import 'package:mindwave/features/auth/domain/repository/user_repository.dart';
@@ -24,7 +21,6 @@ class LoginParams extends Equatable{
 
 class UserLoginUsecase implements UseCaseWithParams<String, LoginParams>{
   final IUserRepository _userRepository;
-<<<<<<< HEAD
   final TokenSharedPrefs _tokenSharedPrefs;
 
 
@@ -34,16 +30,10 @@ class UserLoginUsecase implements UseCaseWithParams<String, LoginParams>{
     })
     : _tokenSharedPrefs = tokenSharedPrefs,
      _userRepository = userRepository;
-=======
-
-  UserLoginUsecase({required IUserRepository userrepository})
-    : _userRepository = userrepository;
->>>>>>> sprint3
 
 
   @override
   Future<Either<Failure, String>> call(LoginParams params) async {
-<<<<<<< HEAD
     // return await _userRepository.loginUser(
     //   params.email, 
     //   params.password);
@@ -62,9 +52,3 @@ class UserLoginUsecase implements UseCaseWithParams<String, LoginParams>{
     });
   }
 }
-=======
-    return await _userRepository.loginUser(
-      params.email, 
-      params.password);
-  }}
->>>>>>> sprint3

@@ -11,7 +11,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("About Screen"),
+      child: Text("Mood Tracking"),
     );
   }
 }

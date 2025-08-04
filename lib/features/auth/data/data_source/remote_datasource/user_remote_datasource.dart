@@ -12,9 +12,25 @@ class UserRemoteDatasource implements IUserDataSource{
   UserRemoteDatasource({required ApiService apiService})
     : _apiService = apiService;
 
+  // @override
+  // Future<UserEntity> getCurrentUser() {
+  //   throw UnimplementedError();
+  // }
+
   @override
-  Future<UserEntity> getCurrentUser() {
-    throw UnimplementedError();
+  Future<UserEntity> getCurrentUser() async {
+    try {
+      final response = await _apiService.dio.get(ApiEndpoints.getCurrentUser);
+
+      if (response.statusCode == 200) {
+        final userJson = response.data['user']; // Adjust key according to your API response
+        return UserApiModel.fromJson(userJson).toEntity();
+      } else {
+        throw Exception('Failed to fetch user: ${response.statusMessage}');
+      }
+    } catch (e) {
+      throw Exception('Unexpected error: $e');
+    }
   }
 
   @override
@@ -28,7 +44,7 @@ class UserRemoteDatasource implements IUserDataSource{
         },
       );
       if(response.statusCode == 200) {
-        print(response.data);
+        print(response.data['token']);
         return response.data['token'];
         // final str = response.data['token'];
         // return str;

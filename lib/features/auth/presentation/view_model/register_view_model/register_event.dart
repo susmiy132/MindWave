@@ -1,29 +1,20 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 @immutable
 sealed class RegisterEvent {}
 
-// class UploadImageEvent extends RegisterEvent{
-//   final String imagePath;
-
-//   UploadImageEvent({required this.imagePath});
-
-//   get file => null;
-  
-// }
-
 class UploadImageEvent extends RegisterEvent {
   final File file;
+  final BuildContext context;
 
-  UploadImageEvent({required this.file});
+  UploadImageEvent({
+    required this.file,
+    required this.context,
+  });
 }
 
-
-
-
-class RegisterUserEvent extends RegisterEvent{
+class RegisterUserEvent extends RegisterEvent {
   final BuildContext context;
   final String fullName;
   final String email;
@@ -37,6 +28,6 @@ class RegisterUserEvent extends RegisterEvent{
     required this.email,
     required this.phone,
     this.image,
-    required this.password
+    required this.password,
   });
 }
