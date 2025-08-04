@@ -1,8 +1,8 @@
 
-// abstract class MoodTrackerEvent {}
+abstract class MoodTrackerEvent {}
 
-// class MoodSelectedEvent extends MoodTrackerEvent {
-//   final String moodLabel;
+class MoodSelectedEvent extends MoodTrackerEvent {
+  final String moodLabel;
 
-//   MoodSelectedEvent(this.moodLabel);
-// }
+  MoodSelectedEvent(this.moodLabel);
+}
